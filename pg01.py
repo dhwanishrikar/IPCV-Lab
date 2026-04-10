@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 import cv2
 
-#read grayscale image 
 img1=cv2.imread(r"D:\DHWANI\ENGINEERING\VI\IPCV\ipcv_lab\image.jpg")
 img=cv2.cvtColor(img1,cv2.COLOR_BGR2RGB)
 
-#calculate & display the dimentions
 height,width,channels=img.shape
 mh=height//2
 mw=width//2
