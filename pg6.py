@@ -7,10 +7,10 @@ image = cv2.imread(r'D:\4SF23CI052 - IPCV\wall-39.jpg',0)
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
 
-gaussian = cv2.GaussianBlur(gray, (25, 25), 0)                  # Zero to normalise 
+gaussian = cv2.GaussianBlur(gray, (25, 25), 0)                 
 median = cv2.medianBlur(gray, 25)
 laplacian = cv2.Laplacian(gray, cv2.CV_64F)
-laplacian = cv2.convertScaleAbs(laplacian, alpha=2)             # To convert the negetive values
+laplacian = cv2.convertScaleAbs(laplacian, alpha=2)             
 
 plt.figure(figsize=(16, 9))
 
