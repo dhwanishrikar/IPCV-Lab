@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import matplotlib.pyplot as plt
 
 image = cv2.imread("image.jpg")
@@ -11,7 +10,6 @@ clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 enhanced = clahe.apply(low_contrast)
 
 blur = cv2.GaussianBlur(enhanced, (5,5), 0)
-ftfff
 _, segmented = cv2.threshold(blur, 0, 255,
                              cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
