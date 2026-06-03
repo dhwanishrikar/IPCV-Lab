@@ -10,8 +10,7 @@ clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 enhanced = clahe.apply(low_contrast)
 
 blur = cv2.GaussianBlur(enhanced, (5,5), 0)
-_, segmented = cv2.threshold(blur, 0, 255,
-                             cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+_, segmented = cv2.threshold(blur, 0, 255,cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
 plt.figure(figsize=(10,6))
 
