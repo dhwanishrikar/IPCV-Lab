@@ -8,14 +8,11 @@ img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 h, w = img_rgb.shape[:2]  
 
 tx, ty = 200, 150
-T = np.float32([[1, 0, tx],
-                [0, 1, ty]])
-
+T = np.float32([[1, 0, tx],[0, 1, ty]])
 translated = cv2.warpAffine(img_rgb, T, (w+tx, h+ty)) 
 
 
 angle = 45
-
 R = cv2.getRotationMatrix2D((w//2, h//2), angle, 1)
 
 corners = np.float32([[0,0],[w,0],[0,h],[w,h]]).reshape(-1,1,2)
@@ -31,6 +28,7 @@ R[0,2] -= np.min(x_coords)
 R[1,2] -= np.min(y_coords)
 
 rotated = cv2.warpAffine(img_rgb, R, (new_w, new_h))
+
 
 scaled = cv2.resize(img_rgb, (300, 300), interpolation=cv2.INTER_LINEAR)
 
